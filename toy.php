@@ -115,7 +115,7 @@ $query_run=mysqli_query($con,$query);
 	</div>
 			<div>
 			<?php
-				$query="select * from categoryinformation3 where category='Car,MotorBike,Industriyal'";
+				$query="select * from categoryinformation where category='Car,MotorBike,Industriyal'";
 				$query_run=mysqli_query($con,$query);
 				
 				$count=mysqli_num_rows($query_run);
