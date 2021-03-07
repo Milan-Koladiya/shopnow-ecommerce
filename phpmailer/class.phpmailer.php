@@ -690,8 +690,8 @@ class SMTP {
       if($this->do_debug >= 4) {
         echo "SMTP -> get_lines(): \$data was \"$data\"" . $this->CRLF . '<br />';
         echo "SMTP -> get_lines(): \$str is \"$str\"" . $this->CRLF . '<br />';
+        $data .= $str;
       }
-      $data .= $str;
       if($this->do_debug >= 4) {
         echo "SMTP -> get_lines(): \$data is \"$data\"" . $this->CRLF . '<br />';
       }
