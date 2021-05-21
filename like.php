@@ -6,16 +6,16 @@
 				$id=$_GET['id'];
 				$action='Like';
 				
-				$query="SELECT * FROM rating WHERE username='$username' AND pid='$id' AND action='DisLike'";
+				$query="SELECT * FROM productRating WHERE username='$username' AND pid='$id' AND action='DisLike'";
 				$query_run=mysqli_query($con,$query);
 				if(mysqli_num_rows($query_run)>0)
 				{
-					$query="UPDATE rating SET action='$action' WHERE username='$username' AND pid='$id'";
+					$query="UPDATE productRating SET action='$action' WHERE username='$username' AND pid='$id'";
 					$query_run=mysqli_query($con,$query);
 				}
 				else
 				{
-					$query="SELECT * FROM rating WHERE username='$username' AND pid='$id' AND action='Like'";
+					$query="SELECT * FROM productRating WHERE username='$username' AND pid='$id' AND action='Like'";
 					$query_run=mysqli_query($con,$query);
 					if(mysqli_num_rows($query_run)>0)
 					{
@@ -23,7 +23,7 @@
 					}
 					else
 					{
-					$query="insert into rating values('','$username','$id','$action')";
+					$query="insert into productRating values('','$username','$id','$action')";
 					$query_run=mysqli_query($con,$query);
 					}
 				}
